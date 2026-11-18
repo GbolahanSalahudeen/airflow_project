@@ -1,0 +1,38 @@
+,id,cat,subcat,maintenance
+0,AC_BR,Accessories,Bike Racks,Yes
+1,AC_BS,Accessories,Bike Stands,No
+2,AC_BC,Accessories,Bottles and Cages,No
+3,AC_CL,Accessories,Cleaners,Yes
+4,AC_FE,Accessories,Fenders,No
+5,AC_HE,Accessories,Helmets,Yes
+6,AC_HP,Accessories,Hydration Packs,No
+7,AC_LI,Accessories,Lights,Yes
+8,AC_LO,Accessories,Locks,Yes
+9,AC_PA,Accessories,Panniers,No
+10,AC_PU,Accessories,Pumps,Yes
+11,AC_TT,Accessories,Tires and Tubes,Yes
+12,BI_MB,Bikes,Mountain Bikes,Yes
+13,BI_RB,Bikes,Road Bikes,Yes
+14,BI_TB,Bikes,Touring Bikes,Yes
+15,CL_BS,Clothing,Bib-Shorts,No
+16,CL_CA,Clothing,Caps,No
+17,CL_GL,Clothing,Gloves,No
+18,CL_JE,Clothing,Jerseys,No
+19,CL_SH,Clothing,Shorts,No
+20,CL_SO,Clothing,Socks,No
+21,CL_TI,Clothing,Tights,No
+22,CL_VE,Clothing,Vests,No
+23,CO_BB,Components,Bottom Brackets,Yes
+24,CO_BR,Components,Brakes,Yes
+25,CO_CH,Components,Chains,Yes
+26,CO_CS,Components,Cranksets,Yes
+27,CO_DE,Components,Derailleurs,Yes
+28,CO_FO,Components,Forks,Yes
+29,CO_HB,Components,Handlebars,No
+30,CO_HS,Components,Headsets,No
+31,CO_MF,Components,Mountain Frames,Yes
+32,CO_PD,Components,Pedals,No
+33,CO_RF,Components,Road Frames,Yes
+34,CO_SA,Components,Saddles,No
+35,CO_TF,Components,Touring Frames,Yes
+36,CO_WH,Components,Wheels,Yes
