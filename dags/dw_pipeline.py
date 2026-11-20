@@ -25,26 +25,32 @@ with DAG(
     template_searchpath=["/opt/airflow/dags/sql"]
 ):
     
-    download_s3_files = PythonOperator(
-        task_id='s3_download_files',
-        python_callable=s3_download_file,
-        op_kwargs={
-            'bucket_name': 'dw-dataset-bucket',
-            'object_key': 'sales_data/',
-            'path': '/opt/airflow/dags/data/s3_files'
+    # download_s3_files = PythonOperator(
+    #     task_id='s3_download_files',
+    #     python_callable=s3_download_file,
+    #     op_kwargs={
+    #         'bucket_name': 'dw-dataset-bucket',
+    #         'object_key': 'sales_data/',
+    #         'path': '/opt/airflow/dags/data/s3_files'
+    #     }
+    # )
+    
+    extract_data = SQLExecuteQueryOperator(
+        task_id='copy_csv_to_postgres',
+        conn_id='postgres_default',
+        sql='sql/copy_file.sql',
+        split_statements=True,
+        return_last=False,
+        params={
+            'csv_path_1': '/opt/airflow/dags/data/s3_files/cust_info.csv',
+            'csv_path_2': '/opt/airflow/dags/data/s3_files/prd_info.csv',
+            'csv_path_3': '/opt/airflow/dags/data/s3_files/sales_details.csv',
+            'csv_path_4': '/opt/airflow/dags/data/s3_files/CUST_AZ12.csv',
+            'csv_path_5': '/opt/airflow/dags/data/s3_files/LOC_A101.csv',
+            'csv_path_6': '/opt/airflow/dags/data/s3_files/PX_CAT_G1V2.csv'
         }
     )
-    
-    # extract_data = SQLExecuteQueryOperator(
-    #     task_id='fetch_s3_data_to_postgres',
-    #     sql='''
-    #         COPY landing.customers
-    #         FROM 's3://cde-capstone-olalekan/customers'
-    #         IAM_ROLE 'arn:aws:iam::068355631913:role/capstone-redshift-role'
-    #         FORMAT AS PARQUET
-    #         '''
-    # )
 
-    download_s3_files
+    extract_data
     
     

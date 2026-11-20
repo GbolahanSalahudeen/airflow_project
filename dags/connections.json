@@ -1,0 +1,12 @@
+{
+  "postgres_default": {
+    "conn_type": "postgres",
+    "description": null,
+    "login": "airflow",
+    "password": "airflow",
+    "host": "postgres",
+    "port": 5432,
+    "schema": "postgres",
+    "extra": null
+  }
+}
